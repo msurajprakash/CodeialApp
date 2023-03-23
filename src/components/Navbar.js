@@ -6,7 +6,7 @@ const Navbar = () => {
             <div className={styles.leftDiv}>
                 <a href='/'>
                     <img src='https://cdn-icons-png.flaticon.com/512/7448/7448194.png' style={{ width: 50 }} alt='' />
-                    <a href='/' className={styles.nameLogo}>odial</a>
+                    <span className={styles.nameLogo}>odial</span>
                 </a>
             </div>
 
