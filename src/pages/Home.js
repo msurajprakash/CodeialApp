@@ -1,10 +1,11 @@
 import styles from '../styles/home.module.css';
+import PropTypes from 'prop-types';
 
 const Home = ({ posts }) => {
     return (
         <div className={styles.postList}>
             {posts.map(post =>
-                <div className={styles.postWrapper}>
+                <div className={styles.postWrapper} key={`posts-${post._id}`}>
                     <div className={styles.postHeader}>
                         <div className={styles.postAvatar}>
                             <img
@@ -55,6 +56,10 @@ const Home = ({ posts }) => {
             )}
         </div>
     );
+};
+
+Home.PropTypo = {
+    posts: PropTypes.array.isRequired,
 }
 
 export default Home;
