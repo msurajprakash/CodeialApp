@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { getPosts } from "../api";
-import { Home } from '../pages';
+import { Home, Login } from '../pages';
 import { Loader, Navbar } from './'
+import { Routes, Route } from 'react-router-dom';
 
+const About = () => {
+  return <h1>About</h1>
+}
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -13,7 +17,7 @@ function App() {
       const response = await getPosts();
       console.log('response', response);
 
-      if(response.success){
+      if (response.success) {
         setPosts(response.data.posts);
       }
 
@@ -23,13 +27,17 @@ function App() {
     fetchPosts();
   }, []);
 
-  if(loading){
+  if (loading) {
     return <Loader />
   }
   return (
     <div className="App">
       <Navbar />
-      <Home posts={posts}/>
+      <Routes>
+        <Route path="/" element={<Home posts={posts} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/Login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
