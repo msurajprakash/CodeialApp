@@ -11,7 +11,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <App />
-      <ToastContainer autoDismiss='ture'/>
+      <ToastContainer />
     </Router>
   </React.StrictMode>
 );
