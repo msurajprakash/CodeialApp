@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 // import { getPosts } from "../api";
-import { Home, Login, Signup } from '../pages';
+import { Home, Login, Signup, Settings } from '../pages';
 import { Loader, Navbar } from './'
 import { Routes, Route } from 'react-router-dom';
 import { useAuth } from "../hooks";
@@ -23,6 +23,7 @@ function App() {
         {/* <Route path="/about" element={<About />} /> */}
         <Route path="/Login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
+        <Route path="/Settings" element={<Settings />} />
       </Routes>
     </div>
   );
